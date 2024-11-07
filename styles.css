@@ -199,10 +199,10 @@ nav ul li a:hover {
 }
 
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    justify-items: center; /* Center items horizontally */
 }
 
 .skill-card {
@@ -210,7 +210,7 @@ nav ul li a:hover {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
-    max-width: 300px; /* Limit the width to ensure proper alignment */
+    max-width: 100%; /* Ensure responsiveness */
     transition: transform 0.3s ease;
 }
 
@@ -339,14 +339,6 @@ nav ul li a:hover {
         font-size: 20px;
     }
 
-    .skills-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
-    }
-
-    .skill-card {
-        max-width: 90%; /* Ensure skill cards take up most of the width */
-    }
-
     header {
         padding: 5px 10px; /* Further reduce padding for mobile */
     }
@@ -354,7 +346,7 @@ nav ul li a:hover {
     nav {
         flex-direction: row; /* Horizontal layout for mobile view */
         justify-content: space-between; /* Space between logo and nav items */
-         align-items: center; /* Center items vertically */
+        align-items: center; /* Center items vertically */
         flex-wrap: wrap; /* Allow wrapping of items */
     }
 
@@ -364,44 +356,4 @@ nav ul li a:hover {
         padding: 0;
         margin: 0;
         display: flex; /* Ensure ul is a flex container */
-        flex-wrap: wrap; /* Allow wrapping */
-    }
-
-    nav ul li {
-        margin: 10px 15px; /* Adjust margin for mobile */
-    }
-
-    .hero h1 {
-        font-size: 28px; /* Smaller heading size on mobile */
-    }
-
-    .hero p {
-        font-size: 16px; /* Smaller paragraph size on mobile */
-    }
-
-    .cta-button {
-        font-size: 14px; /* Reduce button font size */
-        padding: 8px 15px; /* Adjust button padding for mobile */
-    }
-
-    .about h2, .projects h2, .skills h2, .experience h2, .contact h2 {
-        font-size: 24px; /* Smaller headings on mobile */
-    }
-
-    .about p, .projects p, .skills p, .experience p, .contact p {
-        font-size: 16px; /* Smaller text size for mobile */
-        margin: 0 10px;
-    }
-
-    .timeline-item {
-        padding: 15px;
-    }
-
-    .contact-info a {
-        font-size: 16px; /* Adjust font size of links */
-    }
-
-    .footer p {
-        font-size: 14px; /* Smaller footer text */
-    }
-}
+        flex-wrap: wrap; /*
