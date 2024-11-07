@@ -12,12 +12,6 @@ html, body {
     box-sizing: border-box;
 }
 
-header, section, footer {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 /* Profile Image */
 .profile-image {
     text-align: center;
@@ -154,7 +148,16 @@ nav ul li a:hover {
     margin: 15px;
     display: inline-block;
     vertical-align: top;
-    max-width: 100%; /* Ensure responsiveness */
+    max-width: calc(33.333% - 30px); /* 3 cards per row on large screens */
+    height: 350px; /* Fixed height to maintain uniformity */
+    box-sizing: border-box; /* Ensure padding and margin don't affect height */
+    text-align: left; /* Align text to left */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
 }
 
 .project-card h3 {
@@ -165,13 +168,13 @@ nav ul li a:hover {
 .project-card p {
     font-size: 16px;
     line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 .project-link {
     display: inline-block;
-    margin-top: 15px;
     padding: 10px 15px;
-    background-color: black;
+    background-color: #ffb300; /* Bright yellow */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -179,7 +182,7 @@ nav ul li a:hover {
 }
 
 .project-link:hover {
-    background-color: #333;
+    background-color: #dc9600; /* Darker yellow */
 }
 
 /* Skills Section */
@@ -326,9 +329,14 @@ nav ul li a:hover {
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
-    .project-card, .skill-card {
+    .project-card {
         width: calc(100% - 40px); /* Full width on mobile */
         margin: 10px 0;
+        height: auto; /* Allow height to adjust on smaller screens */
+    }
+
+    .project-card h3 {
+        font-size: 20px;
     }
 
     header {
@@ -348,45 +356,4 @@ nav ul li a:hover {
         padding: 0;
         margin: 0;
         display: flex; /* Ensure ul is a flex container */
-        flex-wrap: wrap; /* Allow items to wrap */
-    }
-
-    nav ul li {
-        margin: 0 5px; /* Further reduce spacing between nav items */
-    }
-
-    nav ul li a {
-        font-size: 13px; /* Smaller font size for nav links */
-        padding: 5px 10px; /* Reduced padding for smaller buttons */
-    }
-
-    .logo {
-        height: 40px; /* Smaller logo size for mobile */
-        margin-left: 5px; /* Adjust margin for logo */
-        margin-right: auto; /* Allow automatic margin adjustment */
-    }
-}
-
-/* Styles for larger screens */
-@media screen and (min-width: 769px) {
-    .project-card, .skill-card {
-        width: calc(30% - 40px); /* 3 cards per row on larger screens */
-    }
-
-    nav ul {
-        flex-direction: row; /* Horizontal layout for larger screens */
-    }
-
-    nav ul li {
-        margin: 0 15px;
-    }
-
-    nav ul li a {
-        font-size: 16px; /* Larger font size for nav links */
-        padding: 10px 15px; /* Normal padding for larger buttons */
-    }
-
-    .logo {
-        height: 60px; /* Original logo size for desktop */
-    }
-}
+        flex-wrap: wrap; /*
